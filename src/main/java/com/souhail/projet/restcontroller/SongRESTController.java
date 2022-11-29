@@ -51,5 +51,11 @@ public class SongRESTController {
 	return songService.findByAlbumIdAlbum(id);
 	}
 	
+	@RequestMapping(value="/songsByName/{name}",method = RequestMethod.GET)
+	public List<Song> findByNomProduitContains(@PathVariable("name") String name) {
+	return songService.findBySongNameContains(name);
+	}
+
+	
 
 }

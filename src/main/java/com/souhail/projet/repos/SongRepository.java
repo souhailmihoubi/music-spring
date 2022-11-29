@@ -4,10 +4,11 @@ import java.util.List;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
-
+import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 import com.souhail.projet.entites.Album;
 import com.souhail.projet.entites.Song;
 
+@RepositoryRestResource(path = "rest")
 public interface SongRepository extends JpaRepository<Song, Long> {
 	
 	List<Song> findBySongName(String name);
